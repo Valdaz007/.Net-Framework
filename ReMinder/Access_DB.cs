@@ -11,11 +11,13 @@ namespace ReMinder
         public Access_DB ()
         {
             conn = new OleDbConnection();
+            # Connection String
             conn.ConnectionString = @"Provider = Microsoft.ACE.OLEDB.12.0; 
-                                    Data Source = C:\Users\Public\Documents\db_ReMinder.accdb;
+                                    Data Source = [File Path/File Name];
                                     Persist Security Info = False;";
         }
 
+        # Checking Connection
         public string Connection()
         {
             try
@@ -31,6 +33,7 @@ namespace ReMinder
             }
         }
 
+        # SQL INSERT COMMAND Method 
         public string INSERT(string tbl, string col, string value)
         {
             try
@@ -50,6 +53,7 @@ namespace ReMinder
             }
         }
 
+        # SQL SELECT COMMAND Method 
         public OleDbDataReader SELECT(string col, string tbl)
         {
             try
